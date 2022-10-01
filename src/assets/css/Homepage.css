@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.homepage-container {
+  padding-top: 120px;
+  min-height: 100vh;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.homepage-title {
+  font-size: 2rem;
+  padding-left: 20px;
+}
+
+h1 > span {
+  color: #ffffff;
+}
+
+.homepage-content p:nth-child(1) {
+  font-size: 1.4rem;
+  letter-spacing: 5px;
+  padding-left: 50px;
+}
+
+.homepage-content p:nth-child(1) > span {
+  color: #ffffff;
+}
+
+.homepage-content p:nth-child(2) {
+  font-size: 1.8rem;
+  letter-spacing: 6px;
+  padding-left: 370px;
+  color: #ffffff;
+}
+
+.homepage-content p:nth-child(3) {
+  font-size: 1.5rem;
+  letter-spacing: 9px;
+  padding-left: 70px;
+}
+
+.homepage-content p:nth-child(3) > span {
+  color: #ffffff;
+}

@@ -16,8 +16,10 @@
   padding-left: 50px;
   padding-right: 35px;
   padding-top: 5px;
-  background-color: rgb(32, 32, 32);
-  color: #ffffffff;
+  background-color: rgb(238, 56, 56);
+  color: rgb(129, 199, 101);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  z-index: 999;
 }
 
 .nav-content {
@@ -42,5 +44,9 @@ ul > li {
 ul > a {
   text-decoration: none;
   color: #ffffffff;
+}
+
+li:hover {
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
