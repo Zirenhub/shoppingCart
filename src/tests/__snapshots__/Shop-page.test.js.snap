@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shop page renders Matches DOM Snapshot 1`] = `
+<div
+  className="shop-page-container"
+>
+  <div>
+    <h1>
+      This is Shop page!
+    </h1>
+  </div>
+</div>
+`;
