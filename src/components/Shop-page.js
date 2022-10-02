@@ -15,10 +15,13 @@ const ShopPage = () => {
     allItems.forEach((element) => {
       if (element.category === "men's clothing") {
         setMensClothing((prevItems) => [...prevItems, element]);
+        setItems((prevItems) => [...prevItems, element]);
       } else if (element.category === 'jewelery') {
         setJewelery((prevItems) => [...prevItems, element]);
+        setItems((prevItems) => [...prevItems, element]);
       } else if (element.category === "women's clothing") {
         setWomensClothing((prevItems) => [...prevItems, element]);
+        setItems((prevItems) => [...prevItems, element]);
       }
     });
   };
@@ -33,7 +36,6 @@ const ShopPage = () => {
     const result = await data.json();
     if (data.ok) {
       console.log(result);
-      setItems(result);
       arrangeItems(result);
     } else {
       throw new Error(result.message || result.statusText);
@@ -58,13 +60,12 @@ const ShopPage = () => {
     );
   } else {
     return (
-      <div className="shop-page-container">
-        <ShopItems
-          womensClothing={womensClothing}
-          mensClothing={mensClothing}
-          jewelery={jewelery}
-        />
-      </div>
+      <ShopItems
+        items={items}
+        womensClothing={womensClothing}
+        mensClothing={mensClothing}
+        jewelery={jewelery}
+      />
     );
   }
 };
