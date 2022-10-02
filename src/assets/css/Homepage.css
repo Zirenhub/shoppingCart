@@ -65,3 +65,25 @@ h1 > span {
 .homepage-content p:nth-child(3) > span {
   color: #ffffff;
 }
+
+.shop-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 5px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: ease-in-out 200ms;
+}
+
+button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+
