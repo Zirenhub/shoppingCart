@@ -2,12 +2,32 @@
 
 exports[`Shop page renders Matches DOM Snapshot 1`] = `
 <div
-  className="shop-page-container"
+  className="shop-container"
 >
-  <div>
-    <h1>
-      This is Shop page!
-    </h1>
+  <div
+    className="sidebar-container"
+  >
+    <div>
+      <p>
+        Filters:
+      </p>
+    </div>
+    <div
+      className="sidebar-buttons"
+    >
+      <button>
+        Men's Clothing
+      </button>
+      <button>
+        Women's Clothing
+      </button>
+      <button>
+        Jewelery
+      </button>
+    </div>
   </div>
+  <div
+    className="shop-page-container"
+  />
 </div>
 `;

@@ -27,41 +27,81 @@ describe('Adding items', () => {
           id: 1,
           title: 'clothing',
           category: "men's clothing",
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 2,
           title: 'accessories',
           category: 'jewelery',
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 3,
           title: 'clothing',
           category: "women's clothing",
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 4,
           title: 'clothing',
           category: "women's clothing",
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 5,
           title: 'electronics',
           category: 'electronics',
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 6,
           title: 'electronics',
           category: 'electronics',
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 7,
           title: 'electronics',
           category: 'electronics',
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
         {
           id: 8,
           title: 'electronics',
           category: 'electronics',
+          rating: {
+            rate: 4,
+            count: 222,
+          },
+          price: 21,
         },
       ])
     );
