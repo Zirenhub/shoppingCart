@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ShopItems from './Shop-items';
+import CartButton from './Cart-button';
 
 const ShopPage = () => {
   const [items, setItems] = useState([]);
   const [mensClothing, setMensClothing] = useState([]);
   const [womensClothing, setWomensClothing] = useState([]);
   const [jewelery, setJewelery] = useState([]);
+  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const arrangeItems = (result) => {
@@ -24,6 +26,30 @@ const ShopPage = () => {
         setItems((prevItems) => [...prevItems, element]);
       }
     });
+  };
+
+  const addToCart = (product) => {
+    const findAlreadyExists = cart.find((obj) => {
+      return obj.title === product;
+    });
+
+    if (findAlreadyExists) {
+      return;
+    }
+
+    const findProdcut = items.find((obj) => {
+      return obj.title === product;
+    });
+
+    setCart((prevItems) => [...prevItems, findProdcut]);
+  };
+
+  const removeFromCart = (product) => {
+    setCart((current) =>
+      current.filter((item) => {
+        return item.title !== product;
+      })
+    );
   };
 
   const getData = async ({ controller }) => {
@@ -60,12 +86,16 @@ const ShopPage = () => {
     );
   } else {
     return (
-      <ShopItems
-        items={items}
-        womensClothing={womensClothing}
-        mensClothing={mensClothing}
-        jewelery={jewelery}
-      />
+      <div>
+        <CartButton cart={cart} removeFromCart={removeFromCart} />
+        <ShopItems
+          items={items}
+          womensClothing={womensClothing}
+          mensClothing={mensClothing}
+          jewelery={jewelery}
+          addToCart={addToCart}
+        />
+      </div>
     );
   }
 };
