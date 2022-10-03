@@ -1,42 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Shop page renders Matches DOM Snapshot 1`] = `
-<div
-  className="shop-container"
->
+<div>
   <div
-    className="sidebar-container"
+    className="cart-container"
   >
-    <div>
-      <p>
-        Filters:
-      </p>
-    </div>
-    <div
-      className="sidebar-buttons"
-    >
-      <button
-        className="filter-btn"
-        onClick={[Function]}
-      >
-        Men's Clothing
-      </button>
-      <button
-        className="filter-btn"
-        onClick={[Function]}
-      >
-        Women's Clothing
-      </button>
-      <button
-        className="filter-btn"
-        onClick={[Function]}
-      >
-        Jewelery
-      </button>
-    </div>
+    <button
+      className="cart-btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(cart-shopping-solid.svg)",
+        }
+      }
+    />
+    <p>
+      0
+    </p>
   </div>
   <div
-    className="shop-page-container"
-  />
+    className="shop-container"
+  >
+    <div
+      className="sidebar-container"
+    >
+      <div>
+        <p>
+          Filters:
+        </p>
+      </div>
+      <div
+        className="sidebar-buttons"
+      >
+        <button
+          className="filter-btn"
+          onClick={[Function]}
+        >
+          Men's Clothing
+        </button>
+        <button
+          className="filter-btn"
+          onClick={[Function]}
+        >
+          Women's Clothing
+        </button>
+        <button
+          className="filter-btn"
+          onClick={[Function]}
+        >
+          Jewelery
+        </button>
+      </div>
+    </div>
+    <div
+      className="shop-page-container"
+    />
+  </div>
 </div>
 `;
