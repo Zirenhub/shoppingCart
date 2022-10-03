@@ -1,7 +1,41 @@
 import '../assets/css/Shop-page.css';
 
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+
 const ShopItems = (props) => {
+  const [renderItems, setRenderItems] = useState([]);
+  const [filter, setFilter] = useState('');
+
   const { items, mensClothing, womensClothing, jewelery } = props;
+
+  useEffect(() => {
+    setRenderItems(items);
+  }, []);
+
+  const handleFilter = (e) => {
+    const allButtons = document.querySelectorAll('.filter-btn');
+    allButtons.forEach((button) => {
+      button.classList.remove('active-btn');
+    });
+
+    const target = e.target.textContent;
+    if (target === filter) {
+      setRenderItems(items);
+      e.target.classList.remove('active-btn');
+      setFilter('');
+    } else {
+      if (target === "Men's Clothing") {
+        setRenderItems(mensClothing);
+      } else if (target === "Women's Clothing") {
+        setRenderItems(womensClothing);
+      } else if (target === 'Jewelery') {
+        setRenderItems(jewelery);
+      }
+      setFilter(target);
+      e.target.classList.add('active-btn');
+    }
+  };
 
   return (
     <div className="shop-container">
@@ -10,13 +44,19 @@ const ShopItems = (props) => {
           <p>Filters:</p>
         </div>
         <div className="sidebar-buttons">
-          <button>Men's Clothing</button>
-          <button>Women's Clothing</button>
-          <button>Jewelery</button>
+          <button onClick={handleFilter} className="filter-btn">
+            Men's Clothing
+          </button>
+          <button onClick={handleFilter} className="filter-btn">
+            Women's Clothing
+          </button>
+          <button onClick={handleFilter} className="filter-btn">
+            Jewelery
+          </button>
         </div>
       </div>
       <div className="shop-page-container">
-        {items.map((item) => {
+        {renderItems.map((item) => {
           return (
             <div className="shop-item-container" key={item.id}>
               <div className="main-desc">
@@ -35,6 +75,7 @@ const ShopItems = (props) => {
                 </div>
                 <div className="product-price">
                   <p>{item.price}$</p>
+                  <button>Buy</button>
                 </div>
               </div>
             </div>
