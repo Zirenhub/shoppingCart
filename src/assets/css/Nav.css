@@ -29,6 +29,12 @@
   font-size: 1.2rem;
 }
 
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 ul {
   display: flex;
   gap: 25px;
@@ -48,5 +54,15 @@ ul > a {
 
 li:hover {
   border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.cart-btn {
+  padding: 10px 15px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  filter: invert(100%) sepia(0%) saturate(7465%) hue-rotate(57deg) brightness(103%) contrast(103%);
 }
 
