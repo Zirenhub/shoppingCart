@@ -1,5 +1,7 @@
 import '../assets/css/Nav.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Cart from './Cart';
 
 const Nav = () => {
   return (
@@ -16,7 +18,7 @@ const Nav = () => {
             <li>Shop</li>
           </Link>
         </ul>
-        <h3>Logo</h3>
+        <Cart />
       </nav>
     </div>
   );
