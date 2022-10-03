@@ -15,13 +15,22 @@ exports[`Shop page renders Matches DOM Snapshot 1`] = `
     <div
       className="sidebar-buttons"
     >
-      <button>
+      <button
+        className="filter-btn"
+        onClick={[Function]}
+      >
         Men's Clothing
       </button>
-      <button>
+      <button
+        className="filter-btn"
+        onClick={[Function]}
+      >
         Women's Clothing
       </button>
-      <button>
+      <button
+        className="filter-btn"
+        onClick={[Function]}
+      >
         Jewelery
       </button>
     </div>
