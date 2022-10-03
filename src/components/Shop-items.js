@@ -7,11 +7,17 @@ const ShopItems = (props) => {
   const [renderItems, setRenderItems] = useState([]);
   const [filter, setFilter] = useState('');
 
-  const { items, mensClothing, womensClothing, jewelery } = props;
+  const { items, mensClothing, womensClothing, jewelery, addToCart } = props;
 
   useEffect(() => {
     setRenderItems(items);
   }, []);
+
+  const handleBuy = (e) => {
+    const target = e.target.dataset.product;
+
+    addToCart(target);
+  };
 
   const handleFilter = (e) => {
     const allButtons = document.querySelectorAll('.filter-btn');
@@ -75,7 +81,13 @@ const ShopItems = (props) => {
                 </div>
                 <div className="product-price">
                   <p>{item.price}$</p>
-                  <button>Buy</button>
+                  <button
+                    data-product={item.title}
+                    onClick={handleBuy}
+                    className="add-product"
+                  >
+                    Buy
+                  </button>
                 </div>
               </div>
             </div>
