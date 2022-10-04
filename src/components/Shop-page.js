@@ -63,7 +63,6 @@ const ShopPage = () => {
     });
     findProduct.quantity = 1;
     setCart((prevItems) => [...prevItems, findProduct]);
-    console.log(cart);
   };
 
   const removeFromCart = (product) => {
@@ -83,7 +82,6 @@ const ShopPage = () => {
     });
     const result = await data.json();
     if (data.ok) {
-      console.log(result);
       arrangeItems(result);
     } else {
       throw new Error(result.message || result.statusText);
