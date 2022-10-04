@@ -5,7 +5,7 @@ import Cart from './Cart';
 const CartButton = (props) => {
   const [cartToggle, setCartToggle] = useState(false);
 
-  const { cart, removeFromCart } = props;
+  const { cart, removeFromCart, updateQuantity } = props;
 
   const handleCartToggle = () => {
     setCartToggle((pre) => !pre);
@@ -24,6 +24,7 @@ const CartButton = (props) => {
           close={() => setCartToggle(false)}
           products={cart}
           removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
         />
       )}
     </div>

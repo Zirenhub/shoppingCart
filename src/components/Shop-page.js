@@ -28,6 +28,27 @@ const ShopPage = () => {
     });
   };
 
+  const updateQuantity = (product, quantity, addOrRemove) => {
+    let num = Number(quantity);
+    if (addOrRemove === '+' && num < 24) {
+      num++;
+    } else if (addOrRemove === '-' && num > 1) {
+      num--;
+    }
+
+    setCart((prevState) => {
+      const newState = prevState.map((obj) => {
+        if (obj.title === product) {
+          return { ...obj, quantity: num };
+        }
+
+        return obj;
+      });
+
+      return newState;
+    });
+  };
+
   const addToCart = (product) => {
     const findAlreadyExists = cart.find((obj) => {
       return obj.title === product;
@@ -37,11 +58,12 @@ const ShopPage = () => {
       return;
     }
 
-    const findProdcut = items.find((obj) => {
+    const findProduct = items.find((obj) => {
       return obj.title === product;
     });
-
-    setCart((prevItems) => [...prevItems, findProdcut]);
+    findProduct.quantity = 1;
+    setCart((prevItems) => [...prevItems, findProduct]);
+    console.log(cart);
   };
 
   const removeFromCart = (product) => {
@@ -87,7 +109,11 @@ const ShopPage = () => {
   } else {
     return (
       <div>
-        <CartButton cart={cart} removeFromCart={removeFromCart} />
+        <CartButton
+          cart={cart}
+          removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
+        />
         <ShopItems
           items={items}
           womensClothing={womensClothing}
