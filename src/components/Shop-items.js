@@ -83,6 +83,7 @@ const ShopItems = (props) => {
                   <p>{item.price}$</p>
                   <button
                     data-product={item.title}
+                    data-testid={item.title}
                     onClick={handleBuy}
                     className="add-product"
                   >

@@ -17,8 +17,9 @@ const CartButton = (props) => {
         className="cart-btn"
         style={{ backgroundImage: `url(${cartSVG})` }}
         onClick={handleCartToggle}
+        data-testid="cartBtn"
       ></button>
-      <p>{cart.length}</p>
+      <p data-testid="itemsInCart">{cart.length}</p>
       {cartToggle && (
         <Cart
           close={() => setCartToggle(false)}
