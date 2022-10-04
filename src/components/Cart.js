@@ -1,10 +1,18 @@
 import '../assets/css/Cart.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Cart = (props) => {
   const [cost, setCost] = useState(0);
 
   const { products, removeFromCart, updateQuantity } = props;
+
+  useEffect(() => {
+    let result = products.reduce((acc, obj) => {
+      return acc + obj.price * obj.quantity;
+    }, 0);
+
+    setCost(result);
+  }, [products]);
 
   const handleRemove = (e) => {
     const target = e.target.dataset.product;
@@ -19,8 +27,6 @@ const Cart = (props) => {
 
     updateQuantity(target, value, addOrRemove);
   };
-
-  console.log(products);
 
   return (
     <div className="modal-overlay">
@@ -51,9 +57,13 @@ const Cart = (props) => {
                   data-product={item.title}
                   data-quantity={item.quantity}
                 >
-                  <button onClick={handleQuantity}>-</button>
-                  <p>{item.quantity}</p>
-                  <button onClick={handleQuantity}>+</button>
+                  <button onClick={handleQuantity} className="quantity-btn">
+                    -
+                  </button>
+                  <p data-testid="itemsInCart">{item.quantity}</p>
+                  <button onClick={handleQuantity} className="quantity-btn">
+                    +
+                  </button>
                 </div>
 
                 <div className="product-description">
@@ -75,6 +85,14 @@ const Cart = (props) => {
               </div>
             );
           })}
+        </div>
+        <div className="checkout-container">
+          <div className="price-content">
+            <p data-testid="totalCost">{Math.floor(cost * 100) / 100}$ Total</p>
+          </div>
+          <div className="checkout-btn">
+            <button>Checkout</button>
+          </div>
         </div>
       </div>
     </div>
